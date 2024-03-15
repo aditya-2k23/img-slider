@@ -263,7 +263,7 @@ header a:hover {
 
 .carousel.next .thumbnail {
   transform: translateX(150px);
-  animation: transformThumbnail 0.5s linear forwards;
+  animation: transformThumbnail 1s linear reverse;
 }
 
 @keyframes transformThumbnail {
@@ -300,11 +300,29 @@ header a:hover {
   animation: showThumbnail 0.5s linear 1 forwards;
 }
 
+.carousel.next .list .item:nth-child(2) .author,
+.carousel.next .list .item:nth-child(2) .title,
+.carousel.next .list .item:nth-child(2) .topic,
+.carousel.next .list .item:nth-child(2) .des,
+.carousel.next .list .item:nth-child(2) .buttons,
+.carousel.next .arrows button {
+  animation: contentIn 1.5s linear 1 forwards;
+}
+
+@keyframes contentIn {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 .carousel.prev .list .item:nth-child(2) .author,
 .carousel.prev .list .item:nth-child(2) .title,
 .carousel.prev .list .item:nth-child(2) .topic,
 .carousel.prev .list .item:nth-child(2) .des,
-.carousel.prev .list .item:nth-child(2) .buttons {
+.carousel.prev .list .item:nth-child(2) .buttons,
+.carousel.prev .arrows button {
   animation: contentOut 1.5s linear 1 forwards;
 }
 
@@ -334,7 +352,7 @@ header a:hover {
 .carousel.next .time,
 .carousel.prev .time {
   width: 100%;
-  animation: timeRunning 2s linear 1 forwards;
+  animation: timeRunning 7s linear 1 forwards;
 }
 
 @keyframes timeRunning {
